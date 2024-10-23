@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <title>MediaPipe</title>
+        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <!-- js -->
+        <script type="module" src="./script.js"></script>
+    </head>
+
+    <body>
+        
+        <div class="oneLine">
+            <h1 class="left-align">Pose Teacher</h1>
+            <h3 class="right-align"><div id="model-summary"></div></h3>
+        </div>
+        
+        <div class="container">
+            <video class="input_video"></video>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <div class="butt">
+                <button id="start"> 웹캠</button>
+            </div>
+        </div>
+    </body>
+    </html>
+
+<style>
+    /*  */
+    body {
+        bottom: 0;
+        font-family: 'Titillium Web', sans-serif;
+        color: white;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform-origin: 0px 0px;
+        overflow: hidden;
+
+        background-color: #657786;
+        /*
+        61b3de
+
+        */
+    }
+        
+    .container {
+        position: absolute;
+        background-color: #aab8c2;
+        width: 100%;
+    }/*
+    */
+    .input_video {
+        display: none;/*
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &.selfie {
+        transform: scale(-1, 1);
+        }*/
+    }
+    
+    .output_canvas {
+        width: 90%;
+        display: block;
+        position: relative;
+        left: 5%;
+        top: 0;
+        transform: scaleX(-1);
+    }
+    .oneLine {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .left-align {
+        margin: 0;
+    }
+    
+    .right-align {
+        margin: 0;
+        margin-left: auto;
+    }
+    .butt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #657786;
+    }
+    .butt button {
+        margin-top: 2%;
+        font-size: 1.5em;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    h1 {
+        font-size: 4em; /* 원하는 크기로 설정 */
+    }
+    h3 {
+        font-size: 3em; /* 원하는 크기로 설정 */
+    }
+</style> 
